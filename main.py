@@ -15,8 +15,8 @@ def main():
     fill_unknow_on_empty(data, "country")
     print(data)
     
-    manipulated_data = data_manipulation(data)
-    print(manipulated_data)
+    data = data_manipulation(data)
+    # print(manipulated_data)
 
     data_transformation = DataTransformation(data)
     category_summary = data_transformation.summarize_by_category()
