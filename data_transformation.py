@@ -34,7 +34,7 @@ class DataTransformation:
         return summary
 
     def add_normalized_unit_prices (self):
-        # self.df = self.df.drop('total_sale', axis=1)
+        self.df = self.df.drop('total_sale', axis=1)
         self.df = self.df.drop('month', axis=1)
         avg_price = self.df['unit_price'].mean()
         self.df['normalized_price'] = ((self.df['unit_price'] / avg_price) * 100).apply(lambda x: f"{x:.1f}")
