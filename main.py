@@ -1,3 +1,4 @@
+from data_transformation import DataTransformation
 import pandas as pd
 
 def main():
@@ -16,6 +17,15 @@ def main():
     
     manipulated_data = data_manipulation(data)
     print(manipulated_data)
+
+    data_transformation = DataTransformation(data)
+    category_summary = data_transformation.summarize_by_category()
+    print(category_summary)
+    sales_per_month = data_transformation.sales_per_month_pivot()
+    print (sales_per_month)
+    normalized_prices = data_transformation.add_normalized_unit_prices()
+    print (normalized_prices)
+
 
 def read_file(file_name: str):
     return pd.read_csv(file_name)
